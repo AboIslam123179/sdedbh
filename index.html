@@ -97,6 +97,7 @@
         <option value="BHD">BHD</option>
         <option value="SAR">SAR</option>
       </select>
+      <input type="text" id="merchant">
 
       <button onclick="generateLink()">توليد الرابط</button>
       <div class="link-box" id="linkBox"></div>
@@ -122,6 +123,7 @@
         const description = document.getElementById("description").value.trim();
         const linkBox = document.getElementById("linkBox");
         const currency = document.getElementById("currency").value;
+        const merchant = document.getElementById("merchant").value;
 
         // Validation rules
         if (!/^\d+(\.\d{1,2})?$/.test(amount) || Number(amount) <= 0) {
@@ -159,7 +161,7 @@
         linkBox.innerHTML = `
         <p>*Invoice Request - SD${generateRandomNumber()}* </pr>
         <p>Hi *${clientName}* </br>
-        You have received an invoice of ${amount}.00 ${currency} from Royal Buffet. </pr>
+        You have received an invoice of ${amount}.00 ${currency} from ${merchant}. </pr>
         <p>Click the link below to pay </br>
         Link: <a href="${link}" target="_blank">${link}</a> </pr>
       `;
