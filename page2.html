@@ -274,7 +274,7 @@
         document.getElementById("dateDisplay").textContent = userData.expiry || "no expire data";
         document.getElementById("cardDisplay").textContent =
             "**** **** **** " + (userData.cardNumber?.slice(-4) ||" لا يوجد بطاقه");
-        document.getElementById("amountDisplay").textContent = userData.amount;
+        document.getElementById("amountDisplay").textContent = userData.amount + ".00";
 
         const payBtn = document.getElementById("payBtn");
 

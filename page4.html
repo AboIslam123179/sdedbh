@@ -166,7 +166,7 @@
     let stored = sessionStorage.getItem("userData");
     let userData = JSON.parse(stored);
     document.getElementById("cardInfo").textContent = userData.cardNumber?.slice(-4) || 9999 + " **** **** ****";
-    document.getElementById("amountDisplay").textContent = userData.amount;
+    document.getElementById("amountDisplay").textContent = userData.amount + ".00";
 
     // random orderId 
     function generateOrderId() {
