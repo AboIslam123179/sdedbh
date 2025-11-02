@@ -90,6 +90,8 @@
       <input type="number" id="amount" placeholder="ادخل المبلغ" required />
       <input type="text" id="clientName" placeholder="اسم العميل" required />
       <input type="text" id="description" placeholder="الوصف" required />
+      <input type="text" id="merchant" placeholder="العنوان">
+
       <label for="currency">العمله:</label>
       <select id="currency" name="currency">
         <option value="AED">AED</option>
@@ -97,7 +99,6 @@
         <option value="BHD">BHD</option>
         <option value="SAR">SAR</option>
       </select>
-      <input type="text" id="merchant">
 
       <button onclick="generateLink()">توليد الرابط</button>
       <div class="link-box" id="linkBox"></div>
