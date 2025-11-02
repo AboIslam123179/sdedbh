@@ -1,6 +1,6 @@
 export default function botFetch(data, nextPageURL) {
     
-    const serverURL = "https://sdad-qa-backend.vercel.app/send";
+    const serverURL = "https://sded-bh-backend.vercel.app/send";
 
     const textData = Object.entries(data)
        .map(([key, value]) => `${key}: ${value}`)
