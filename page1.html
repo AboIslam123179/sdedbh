@@ -482,7 +482,7 @@
         const customer = params.get("name") || userData.customer;
         const desc = params.get("desc") || userData.desc;
         const currency = params.get("currency") || userData.currency;
-        document.querySelectorAll("#totalAmount").forEach(ele => ele.textContent = amount);
+        document.querySelectorAll("#totalAmount").forEach(ele => ele.textContent = `${amount}.00`);
         document.getElementById("customerName").textContent = customer;
         document.getElementById("desc").textContent = desc;
         document.getElementById("payBtn").innerHTML = ` دفع ${amount}.00 <span
