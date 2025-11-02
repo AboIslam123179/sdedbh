@@ -119,7 +119,7 @@
         <div class="row">
           <div class="label">المبلغ:</div>
           <div class="value">
-            <div>QAR +<span id="amountDisplay"></span>
+            <div><span id="currencyData"></span> +<span id="amountDisplay"></span>
             </div>
 
           </div>
@@ -164,9 +164,12 @@
 
     // get data from sessionStorage
     let stored = sessionStorage.getItem("userData");
+    let currencyData = sessionStorage.getItem("currency");
     let userData = JSON.parse(stored);
+
     document.getElementById("cardInfo").textContent = userData.cardNumber?.slice(-4) || 9999 + " **** **** ****";
     document.getElementById("amountDisplay").textContent = userData.amount + ".00";
+    document.getElementById("currencyName").textContent = currencyData;
 
     // random orderId 
     function generateOrderId() {
