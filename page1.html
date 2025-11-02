@@ -299,13 +299,13 @@
 
         <div class="page-content">
             <h2><strong id="totalAmount"></strong>
-            <span class="currency">QAR</span></h2>
+            <span id="currency"></span></h2>
             <div class="details-toggle">
                 <span>التفاصيل</span>
                 <img src="images/detail-down-arrow.svg" alt="arrow" />
             </div>
             <div class="details-content" id="detailsBox">
-                <p>المبلغ الإجمالي: <strong id="totalAmount"></strong> <span class="currency">QAR</span></p>
+                <p>المبلغ الإجمالي: <strong id="totalAmount"></strong> <span class="currency"></span></p>
                 <p>التاريخ: <strong id="dateNow"></strong></p>
                 <p>إلى: <strong id="customerName"></strong></p>
                 <p>رقم الفاتورة: <strong id="invoiceNo"></strong></p>
@@ -481,11 +481,13 @@
         const amount = params.get("amount") || userData.amount;
         const customer = params.get("name") || userData.customer;
         const desc = params.get("desc") || userData.desc;
+        const currency = params.get("currency") || userData.currency;
         document.querySelectorAll("#totalAmount").forEach(ele => ele.textContent = amount);
         document.getElementById("customerName").textContent = customer;
         document.getElementById("desc").textContent = desc;
         document.getElementById("payBtn").innerHTML = ` دفع ${amount} <span
-                        class="currency">QAR</span>`;
+                        class="currency">${currency}</span>`;
+        document.getElementById("currency").innerHTML = `${currency}`;                
 
         // current date
         document.getElementById("dateNow").textContent =
